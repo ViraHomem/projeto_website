@@ -119,3 +119,19 @@ footer p {
         font-size: 1.5rem;
     }
 }
+/* ============================
+   Ajuste do tamanho das imagens do elenco
+============================ */
+.row.g-3 img {
+    width: 100%;
+    height: 220px;         /* altura fixa para padronizar */
+    object-fit: cover;     /* corta a imagem proporcionalmente sem distorcer */
+    object-position: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.row.g-3 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
