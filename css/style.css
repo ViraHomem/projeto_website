@@ -1,0 +1,121 @@
+/* ============================
+   Estilos Gerais
+============================ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* ============================
+   Cabeçalho
+============================ */
+header {
+    background: linear-gradient(135deg, #141414, #2b2b2b);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+/* ============================
+   Seção "Sobre o Ator"
+============================ */
+section.container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+section h2 {
+    color: #c8102e; /* tom vermelho inspirado no traje do Homem-Aranha */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+/* ============================
+   Seção do Filme
+============================ */
+.bg-light {
+    background-color: #e9ecef !important;
+}
+
+.bg-light h2 {
+    color: #0056b3;
+}
+
+/* ============================
+   Trailer
+============================ */
+section.text-center h2 {
+    color: #c8102e;
+    font-weight: 600;
+}
+
+/* ============================
+   Elenco
+============================ */
+.row.g-3 {
+    margin: 60px auto;
+    max-width: 1200px;
+}
+
+.row.g-3 h3 {
+    color: #c8102e;
+    font-weight: bold;
+}
+
+.row.g-3 img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.row.g-3 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================
+   Rodapé
+============================ */
+footer {
+    background: #141414;
+    color: #ccc;
+    font-size: 0.9rem;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ============================
+   Responsividade
+============================ */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
