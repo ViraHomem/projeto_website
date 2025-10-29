@@ -135,3 +135,159 @@ footer p {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* ============================
+   Página Inicial (Index)
+============================ */
+.index-body {
+    background: linear-gradient(135deg, #c8102e, #0a0a0a, #0047ab);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.index-body h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.index-body p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+}
+
+/* Botões */
+.spiderman-btn {
+    display: inline-block;
+    background-color: #c8102e;
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.spiderman-btn:hover {
+    background-color: #0047ab;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* Rodapé */
+.index-footer {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9rem;
+}
+/* ============================
+   Página Inicial com Caixas de Personagens
+============================ */
+.index-body {
+    background: linear-gradient(135deg, #c8102e, #0a0a0a, #0047ab);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Título */
+.index-body h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.index-body p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+}
+
+/* Grade dos cards */
+.hero-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Caixa de cada herói */
+.hero-card {
+    position: relative;
+    width: 280px;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Imagem de fundo */
+.hero-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: brightness(0.8);
+}
+
+/* Efeito de hover */
+.hero-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+/* Texto sobreposto */
+.hero-card .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 20px;
+}
+
+.hero-card h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Rodapé */
+.index-footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
