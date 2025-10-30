@@ -291,3 +291,100 @@ footer p {
     font-size: 0.9rem;
 }
 
+/* Corpo e fundo */
+.index-body {
+    background-color: #f5f5f5;
+    background-image: url('images/teia-background.jpg'); /* Imagem de teia como fundo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Barra vermelha no topo */
+.header-bar {
+    background-color: #e50914; /* Cor vermelha */
+}
+
+/* Barra azul no rodapé */
+.footer-bar {
+    background-color: #1f66b3; /* Cor azul */
+}
+
+/* Estilo dos cards dos heróis */
+.hero-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-card {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.hero-card .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hero-card:hover .hero-img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h2 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Centralizar o conteúdo de texto */
+.text-center p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Barra azul no rodapé */
+.footer-bar {
+    background-color: #1f66b3; /* Cor azul */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: relative; /* Tira o rodapé do modo fixo/absoluto */
+    bottom: 0;
+    left: 0;
+}
+
+/* Espaço extra antes do rodapé */
+body {
+    padding-bottom: 100px; /* cria um espaço para poder rolar */
+}
+
