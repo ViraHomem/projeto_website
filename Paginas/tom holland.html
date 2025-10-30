@@ -1,11 +1,419 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Homem-Aranha (Tom Holland) - Biografia dos Filmes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+   
+    <script src="https://kit.fontawesome.com/SEU_CÓDIGO_AQUI.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+   
+<style>
+    /* NOVAS VARIÁVEIS DE COR VIBRANTES */
+    :root {
+        --spider-blue: #1F75FE; /* Azul VIVO (Usado como primary) */
+        --spider-red: #FF0000;  /* Vermelho VIVO (Usado como danger) */
+        --spider-dark: #212529; /* Preto/Cinza Escuro para texto e sombras */
+    }
+ 
+    /* Estilo da Fonte */
+    #biografia {
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 900 !important;
+    }
+ 
+    /* Estilo da Teia (Posicionamento Fixo) */
+    #teia-canto {
+        position: absolute;
+        top: 0; right: 0;
+        width: 150px; height: auto;
+        z-index: 1000; opacity: 0.8;
+    }
+   
+    /* Efeito Hover nos Cards */
+    .card-animado {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+ 
+    .card-animado:hover {
+        transform: translateY(-5px) scale(1.02);
+        /* Sombra mais escura para contraste */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
+    }
+   
+    /* Estilos Iniciais para o Scroll Reveal */
+    .scroll-reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+ 
+    .scroll-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+ 
+    /* Estilos do Typewriter */
+    .cursor {
+        display: inline-block;
+        width: 2px; height: 1.2em;
+        background-color: var(--spider-dark);
+        margin-left: 2px;
+        animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+        from, to { visibility: visible; }
+        50% { visibility: hidden; }
+    }
+ 
+    /* EFEITO VISUAL DA IMAGEM PRINCIPAL */
+    .duotone-img {
+        filter: brightness(0.9) contrast(1.1);
+        transition: filter 0.5s ease;
+    }
+ 
+    .duotone-img:hover {
+        filter: brightness(1) contrast(1.2);
+    }
+ 
+    /* Estilo para a imagem flutuante (Origem) */
+    .img-float-right {
+        float: right;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        width: 40%;
+        max-width: 250px;
+        height: auto;
+        object-fit: cover;
+        /* Borda vermelha vibrante */
+        border: 4px solid var(--spider-red);
+    }
+   
+    /* ------------------------------------------- */
+    /* APLICAÇÃO DAS NOVAS CORES VIBRANTES */
+    /* ------------------------------------------- */
+ 
+    /* Altera cores de borda/texto que usavam classes de cor */
+    .text-danger, .border-danger {
+        color: var(--spider-red) !important;
+        border-color: var(--spider-red) !important;
+    }
+ 
+    /* Altera a borda da Blockquote (que era border-primary) */
+    .blockquote.border-start {
+        border-color: var(--spider-blue) !important;
+    }
+   
+    /* Cor de fundo da seção de curiosidades (era bg-danger) */
+    #curiosidades {
+        background-color: var(--spider-red) !important;
+    }
+ 
+    /* Botão Voltar ao Topo (vermelho vibrante) */
+    #btn-topo {
+        background-color: var(--spider-red) !important;
+        border-color: var(--spider-red) !important;
+        position: fixed;
+        bottom: 20px; right: 20px;
+        z-index: 1050; opacity: 0;
+        transition: opacity 0.5s, transform 0.3s;
+        transform: scale(0);
+    }
+ 
+    #btn-topo.show {
+        opacity: 1;
+        transform: scale(1);
+    }
+ 
+    /* Navbar Personalizada (VERMELHO) */
+    .navbar-custom {
+        transition: background-color 0.4s ease;
+        /* Vermelho com transparência no topo */
+        background-color: rgba(255, 0, 0, 0.9) !important;
+    }
+ 
+    .navbar-custom.scrolled {
+        /* Vermelho sólido ao rolar */
+        background-color: var(--spider-red) !important;
+    }
+ 
+</style>
 </head>
-<body>
-    
+<body style="background-color: #1F75FE;">
+ 
+    <img src="images/teia_aranha-removebg-preview.png" id="teia-canto" alt="Teia de aranha decorativa no canto superior direito.">
+ 
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm border-bottom border-secondary border-3 sticky-top navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-white" href="#">
+                <i class="fas fa-spider"></i> Spider-Man | Peter Parker (Tom Holland)
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+    <a class="nav-link text-white" href="#elenco">Elenco Principal</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link text-white" href="#trailer">Trailer</a>
+</li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="#biografia">Biografia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#origem">Origem (Guerra Civil)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#filmes-solo">Filmes Solo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#curiosidades">Curiosidades</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+    <div class="container my-5">
+       
+        <div class="bg-white p-5 rounded-4 shadow-lg mb-5 scroll-reveal">
+            <header class="text-center">
+                <h1 class="display-4 fw-bolder text-dark" id="biografia">Peter Parker: O Amigão da Vizinhança</h1>
+               
+                <p class="lead text-muted" id="typewriter-text"></p>
+                <span class="cursor"></span>
+               
+                <div class="mt-4">
+                    <img src="images/banneraranha.jfif" class="img-fluid rounded-4 shadow duotone-img" alt="Peter Parker (Tom Holland) em seu traje do Homem-Aranha, pronto para a ação." style="max-height: 400px; object-fit: cover;">
+                </div>
+            </header>
+        </div>
+<section id="origem" class="mb-5 p-4 rounded-4 shadow-sm bg-white border-start border-danger border-5 scroll-reveal">
+    <h2 class="text-danger mb-3">🕷️ Introdução no MCU</h2>
+   
+    <img src="images/homemaranhaguerracivil.jfif" class="img-fluid rounded-3 shadow img-float-right" alt="Homem-Aranha aparecendo em Capitão América: Guerra Civil.">
+   
+    <p class="text-muted">Peter Parker foi recrutado por Tony Stark (Homem de Ferro) em <strong>Capitão América: Guerra Civil (2016)</strong> para ajudar na batalha entre os Vingadores. Como um adolescente de 15 anos do Queens, ele equilibra a vida escolar, as paixões da adolescência e a responsabilidade de ser um super-herói, sempre com a ajuda de sua Tia May e seu melhor amigo, Ned Leeds.</p>
+    <p class="text-muted">A sua primeira aparição foi um marco para a introdução de heróis mais jovens no Universo Cinematográfico Marvel, estabelecendo seu relacionamento de mentor-protegido com Tony Stark.</p>
+    <blockquote class="blockquote border-start border-primary ps-3 pt-2 rounded-3">
+        <p class="mb-0 fst-italic text-dark">"Se você é capaz de fazer coisas incríveis, e coisas ruins acontecem porque você não faz, a culpa é sua."</p>
+        <footer class="blockquote-footer mt-1">Peter Parker (Paráfrase da responsabilidade)</footer>
+    </blockquote>
+</section>
+ 
+<section id="filmes-solo" class="mb-5 scroll-reveal">
+    <h2 class="text-white mb-4 text-center">🎥 A Trilogia "De Volta ao Lar"</h2>
+ 
+    <div class="text-center mb-4">
+         <img src="images/bannerprincipal.jfif"
+   
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+       
+        <div class="col">
+            <div class="card h-100 shadow border-0 text-center rounded-4 card-animado">
+                <div class="card-body bg-light">
+                    <h5 class="card-title text-danger fw-bold">Homem-Aranha: De Volta ao Lar (2017)</h5>
+                    <p class="card-text text-muted">A primeira aventura solo. Peter tenta provar seu valor a Tony Stark, lidando com os desafios de ser um herói local e enfrentando o primeiro grande vilão, o Abutre (Adrian Toomes).</p>
+                </div>
+                <div class="card-footer text-white" style="background-color: #002244;">
+                    Tema: Provar que é Digno do Traje.
+                </div>
+            </div>
+        </div>
+ 
+        <div class="col">
+            <div class="card h-100 shadow border-0 text-center rounded-4 card-animado">
+                <div class="card-body bg-light">
+                    <h5 class="card-title text-danger fw-bold">Homem-Aranha: Longe de Casa (2019)</h5>
+                    <p class="card-text text-muted">Após os eventos de Vingadores: Ultimato, Peter lida com a perda de seu mentor, é recrutado por Nick Fury e enganado pelo mestre das ilusões, Mistério (Quentin Beck).</p>
+                </div>
+                <div class="card-footer bg-secondary text-white">
+                    Tema: Sucessão e Desconfiança.
+                </div>
+            </div>
+        </div>
+ 
+        <div class="col">
+            <div class="card h-100 shadow border-0 text-center rounded-4 card-animado">
+                <div class="card-body bg-light">
+                    <h5 class="card-title text-danger fw-bold">Homem-Aranha: Sem Volta Para Casa (2021)</h5>
+                    <p class="card-text text-muted">Com sua identidade revelada, Peter busca a ajuda do Doutor Estranho, causando uma falha mágica que atrai vilões e outros Homens-Aranhas de outros universos. Um sacrifício final é necessário.</p>
+                </div>
+                <div class="card-footer bg-secondary text-white">
+                    Tema: O Preço do Segredo e o Verdadeiro Sacrifício.
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+</section>
+       
+<section id="curiosidades" class="p-4 rounded-4 text-center bg-danger text-white shadow-lg scroll-reveal">
+    <h3>🌟 Curiosidades e Legado</h3>
+    <ul class="list-unstyled mt-3">
+        <li><i class="fas fa-hand-point-right me-2"></i> Tom Holland é o terceiro ator a interpretar Peter Parker em filmes *live-action*.</li>
+        <li><i class="fas fa-hand-point-right me-2"></i> Os filmes do MCU focam em Peter Parker na escola de Ensino Médio.</li>
+        <li><i class="fas fa-hand-point-right me-2"></i> Sua jornada é marcada pelo crescimento de um herói protegido por Tony Stark para um herói verdadeiramente independente.</li>
+    </ul>
+    <hr>
+ 
+    <div class="row justify-content-center g-3 mb-4">
+        <div class="col-6 col-md-4">
+            <img src="images/rolaemevento.jfif" class="img-fluid rounded-3 shadow" alt="Tom Holland em um evento do Homem-Aranha." style="border: 2px solid white;">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="images/semmascara.jfif" class="img-fluid rounded-3 shadow" alt="Peter Parker sem máscara." style="border: 2px solid white;">
+        </div>
+    </div>
+ 
+    <p class="lead fw-bold">"Com grandes poderes, vêm grandes responsabilidades."</p>
+</section>
+ 
+<section id="elenco" class="mb-5 p-4 rounded-4 shadow-sm bg-light border-start border-primary border-5 scroll-reveal">
+    <h2 class="text-dark mb-4 fw-bolder">⭐ Elenco Principal (Trilogia MCU)</h2>
+    <p class="lead text-muted">Conheça os atores chave que acompanharam Peter Parker em sua jornada.</p>
+ 
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 text-center">
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 card-animado">
+                <img src="images/tomholland.jfif" class="card-img-top mx-auto mt-2 rounded-3" alt="Tom Holland" style="width: 80%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold text-danger">Tom Holland</h6>
+                    <p class="card-text text-muted small">Peter Parker / Homem-Aranha</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 card-animado">
+                <img src="images/zendaya.jfif" class="card-img-top mx-auto mt-2 rounded-3" alt="Zendaya" style="width: 80%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold text-danger">Zendaya</h6>
+                    <p class="card-text text-muted small">Michelle 'MJ' Jones</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 card-animado">
+                <img src="images/jacobfoto.jfif" class="card-img-top mx-auto mt-2 rounded-3" alt="Jacob Batalon" style="width: 80%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold text-danger">Jacob Batalon</h6>
+                    <p class="card-text text-muted small">Ned Leeds</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 card-animado">
+                <img src="images/marisatomei.jfif" class="card-img-top mx-auto mt-2 rounded-3" alt="Marisa Tomei" style="width: 80%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold text-danger">Marisa Tomei</h6>
+                    <p class="card-text text-muted small">Tia May Parker</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<section id="trailer" class="mb-5 p-4 rounded-4 shadow-sm bg-white border-start border-danger border-5 scroll-reveal">
+    <h2 class="text-danger mb-4 fw-bolder">🎬 Assista ao Trailer (Sem Volta Para Casa)</h2>
+    <p class="lead text-muted">O trailer que quebrou a internet e reuniu três gerações de Homens-Aranha.</p>
+   
+    <div class="ratio ratio-16x9 shadow-lg rounded-3">
+        <iframe width="560" height="315" src="images/trailerhomemaranha.webm" title="Trailer Oficial de Homem-Aranha: Sem Volta Para Casa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+ 
+    <p class="mt-3 text-muted small">Trailer oficial de *Homem-Aranha: Sem Volta Para Casa* (2021).</p>
+</section>
+ 
+    </div>
+ 
+<a href="#" class="btn btn-danger btn-lg rounded-circle shadow" id="btn-topo" title="Voltar ao Topo">
+    <i class="fas fa-arrow-up"></i>
+</a>
+ 
+    <footer class="bg-dark text-white text-center py-3 mt-5 rounded-top-4">
+        <p class="mb-0">© 2025 Biografia Não Oficial do Homem-Aranha | Criado com Bootstrap 5.3</p>
+    </footer>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+       
+        // 1. LÓGICA DO SCROLL REVEAL (Animação de entrada das seções)
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const options = { root: null, rootMargin: '0px', threshold: 0.2 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+ 
+        // 2. LÓGICA DO EFEITO TYPEWRITER (Digitação do subtítulo)
+        const textElement = document.getElementById('typewriter-text');
+        const cursorElement = document.querySelector('.cursor');
+        const fullText = "A jornada cinematográfica de Peter Parker, interpretado por Tom Holland no MCU.";
+        let charIndex = 0;
+        const typingSpeed = 50;
+ 
+        function typeWriter() {
+            if (charIndex < fullText.length) {
+                textElement.textContent += fullText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWriter, typingSpeed);
+            } else {
+                if(cursorElement) {
+                    cursorElement.style.display = 'none';
+                }
+            }
+        }
+        setTimeout(typeWriter, 500);
+ 
+        // 3. LÓGICA DO BOTÃO "VOLTAR AO TOPO" E DA NAVBAR
+        const btnTopo = document.getElementById('btn-topo');
+        const navbar = document.querySelector('.navbar-custom');
+        const scrollThreshold = 100; // Distância para mostrar/mudar a cor
+ 
+        window.addEventListener('scroll', () => {
+            // Controle da Navbar
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+ 
+            // Controle do Botão Voltar ao Topo
+            if (window.scrollY > scrollThreshold) {
+                btnTopo.classList.add('show');
+            } else {
+                btnTopo.classList.remove('show');
+            }
+        });
+ 
+        // Adiciona a funcionalidade de rolagem suave ao clicar no botão
+        if (btnTopo) {
+            btnTopo.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+</script>
 </body>
 </html>
