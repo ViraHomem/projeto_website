@@ -1,0 +1,129 @@
+
+    /* NOVAS VARIÁVEIS DE COR VIBRANTES */
+    :root {
+        --spider-blue: #1F75FE; /* Azul VIVO (Usado como primary) */
+        --spider-red: #FF0000;  /* Vermelho VIVO (Usado como danger) */
+        --spider-dark: #212529; /* Preto/Cinza Escuro para texto e sombras */
+    }
+ 
+    /* Estilo da Fonte */
+    #biografia {
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 900 !important;
+    }
+ 
+    /* Estilo da Teia (Posicionamento Fixo) */
+    #teia-canto {
+        position: absolute;
+        top: 0; right: 0;
+        width: 150px; height: auto;
+        z-index: 1000; opacity: 0.8;
+    }
+   
+    /* Efeito Hover nos Cards */
+    .card-animado {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+ 
+    .card-animado:hover {
+        transform: translateY(-5px) scale(1.02);
+        /* Sombra mais escura para contraste */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
+    }
+   
+    /* Estilos Iniciais para o Scroll Reveal */
+    .scroll-reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+ 
+    .scroll-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+ 
+    /* Estilos do Typewriter */
+    .cursor {
+        display: inline-block;
+        width: 2px; height: 1.2em;
+        background-color: var(--spider-dark);
+        margin-left: 2px;
+        animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+        from, to { visibility: visible; }
+        50% { visibility: hidden; }
+    }
+ 
+    /* EFEITO VISUAL DA IMAGEM PRINCIPAL */
+    .duotone-img {
+        filter: brightness(0.9) contrast(1.1);
+        transition: filter 0.5s ease;
+    }
+ 
+    .duotone-img:hover {
+        filter: brightness(1) contrast(1.2);
+    }
+ 
+    /* Estilo para a imagem flutuante (Origem) */
+    .img-float-right {
+        float: right;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        width: 40%;
+        max-width: 250px;
+        height: auto;
+        object-fit: cover;
+        /* Borda vermelha vibrante */
+        border: 4px solid var(--spider-red);
+    }
+   
+    /* ------------------------------------------- */
+    /* APLICAÇÃO DAS NOVAS CORES VIBRANTES */
+    /* ------------------------------------------- */
+ 
+    /* Altera cores de borda/texto que usavam classes de cor */
+    .text-danger, .border-danger {
+        color: var(--spider-red) !important;
+        border-color: var(--spider-red) !important;
+    }
+ 
+    /* Altera a borda da Blockquote (que era border-primary) */
+    .blockquote.border-start {
+        border-color: var(--spider-blue) !important;
+    }
+   
+    /* Cor de fundo da seção de curiosidades (era bg-danger) */
+    #curiosidades {
+        background-color: var(--spider-red) !important;
+    }
+ 
+    /* Botão Voltar ao Topo (vermelho vibrante) */
+    #btn-topo {
+        background-color: var(--spider-red) !important;
+        border-color: var(--spider-red) !important;
+        position: fixed;
+        bottom: 20px; right: 20px;
+        z-index: 1050; opacity: 0;
+        transition: opacity 0.5s, transform 0.3s;
+        transform: scale(0);
+    }
+ 
+    #btn-topo.show {
+        opacity: 1;
+        transform: scale(1);
+    }
+ 
+    /* Navbar Personalizada (VERMELHO) */
+    .navbar-custom {
+        transition: background-color 0.4s ease;
+        /* Vermelho com transparência no topo */
+        background-color: rgba(255, 0, 0, 0.9) !important;
+    }
+ 
+    .navbar-custom.scrolled {
+        /* Vermelho sólido ao rolar */
+        background-color: var(--spider-red) !important;
+    }
